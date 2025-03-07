@@ -1,0 +1,91 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2818
+\cocoatextscaling1\cocoaplatform1{\fonttbl\f0\fnil\fcharset0 .AppleSystemUIFontMonospaced-Regular;}
+{\colortbl;\red255\green255\blue255;\red212\green212\blue212;\red86\green156\blue214;\red156\green220\blue254;
+\red206\green145\blue120;\red181\green206\blue168;\red155\green112\blue63;\red78\green201\blue176;\red255\green255\blue255;
+}
+{\*\expandedcolortbl;;\cssrgb\c83137\c83137\c83137;\cssrgb\c33725\c61176\c83922;\cssrgb\c61176\c86275\c99608;
+\cssrgb\c80784\c56863\c47059;\cssrgb\c70980\c80784\c65882;\cssrgb\c60784\c43922\c24706;\cssrgb\c30588\c78824\c69020;\cssrgb\c100000\c100000\c100000;
+}
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\f0\fs38 \cf2 <!DOCTYPE \cf3 html\cf2 >\
+\cf3 <html \cf4 lang\cf3 =\cf5 "en"\cf3 >\cf2 \
+\cf3 <head>\cf2 \
+    \cf3 <meta \cf4 charset\cf3 =\cf5 "UTF-8"\cf3 >\cf2 \
+    \cf3 <meta \cf4 name\cf3 =\cf5 "viewport"\cf3  \cf4 content\cf3 =\cf5 "width=device-width, initial-scale=1.0"\cf3 >\cf2 \
+    \cf3 <title>\cf2 English SOL Quiz\cf3 </title>\cf2 \
+    \cf3 <style>\cf2 \
+        \cf3 body\cf2  \{ \cf3 font-family\cf2 : Arial, sans-serif; \cf3 text-align\cf2 : center; \cf3 margin\cf2 : \cf6 50px\cf2 ; \}\
+        \cf7 .quiz-container\cf2  \{ \cf3 max-width\cf2 : \cf6 600px\cf2 ; \cf3 margin\cf2 : auto; \cf3 padding\cf2 : \cf6 20px\cf2 ; \cf3 border\cf2 : \cf6 2px\cf2  solid \cf6 #ccc\cf2 ; \cf3 border-radius\cf2 : \cf6 10px\cf2 ; \}\
+        \cf7 .question\cf2  \{ \cf3 font-size\cf2 : \cf6 18px\cf2 ; \cf3 margin-bottom\cf2 : \cf6 10px\cf2 ; \}\
+        \cf7 .options\cf2  \{ \cf3 display\cf2 : flex; \cf3 flex-direction\cf2 : column; \}\
+        \cf7 .option\cf2  \{ \cf3 margin\cf2 : \cf6 5px\cf2  \cf6 0\cf2 ; \cf3 padding\cf2 : \cf6 10px\cf2 ; \cf3 border\cf2 : \cf6 1px\cf2  solid \cf6 #000\cf2 ; \cf3 cursor\cf2 : pointer; \}\
+        \cf7 .option\cf2 :hover \{ \cf3 background-color\cf2 : \cf6 #f0f0f0\cf2 ; \}\
+        \cf7 .hidden\cf2  \{ \cf3 display\cf2 : none; \}\
+    \cf3 </style>\cf2 \
+\cf3 </head>\cf2 \
+\cf3 <body>\cf2 \
+    \cf3 <div \cf4 class\cf3 =\cf5 "quiz-container"\cf3 >\cf2 \
+        \cf3 <h1>\cf2 English SOL Quiz\cf3 </h1>\cf2 \
+        \cf3 <div \cf4 id\cf3 =\cf5 "question-container"\cf3 >\cf2 \
+            \cf3 <p \cf4 class\cf3 =\cf5 "question"\cf3  \cf4 id\cf3 =\cf5 "question"\cf3 >\cf2 Loading...\cf3 </p>\cf2 \
+            \cf3 <div \cf4 class\cf3 =\cf5 "options"\cf3  \cf4 id\cf3 =\cf5 "options"\cf3 ></div>\cf2 \
+        \cf3 </div>\cf2 \
+        \cf3 <button \cf4 onclick\cf3 =\cf5 "nextQuestion()"\cf3  \cf4 id\cf3 =\cf5 "next-btn"\cf3  \cf4 class\cf3 =\cf5 "hidden"\cf3 >\cf2 Next\cf3 </button>\cf2 \
+        \cf3 <p \cf4 id\cf3 =\cf5 "score"\cf3  \cf4 class\cf3 =\cf5 "hidden"\cf3 ></p>\cf2 \
+    \cf3 </div>\cf2 \
+    \
+    \cf3 <script>\cf2 \
+        \cf3 const\cf2  quiz = [\
+            \{ \cf4 question\cf2 : \cf5 "What is the main idea of a passage?"\cf2 , \cf4 options\cf2 : [\cf5 "A minor detail"\cf2 , \cf5 "The central message"\cf2 , \cf5 "A random fact"\cf2 , \cf5 "The author's name"\cf2 ], \cf4 answer\cf2 : \cf6 1\cf2  \},\
+            \{ \cf4 question\cf2 : \cf5 "Which sentence is grammatically correct?"\cf2 , \cf4 options\cf2 : [\cf5 "He go to school."\cf2 , \cf5 "She going to the park."\cf2 , \cf5 "They are playing outside."\cf2 , \cf5 "Me like pizza."\cf2 ], \cf4 answer\cf2 : \cf6 2\cf2  \},\
+            \{ \cf4 question\cf2 : \cf5 "Choose the correct past tense verb:"\cf2 , \cf4 options\cf2 : [\cf5 "Run"\cf2 , \cf5 "Running"\cf2 , \cf5 "Ran"\cf2 , \cf5 "Runs"\cf2 ], \cf4 answer\cf2 : \cf6 2\cf2  \},\
+            \{ \cf4 question\cf2 : \cf5 "Which word is a synonym for 'happy'?"\cf2 , \cf4 options\cf2 : [\cf5 "Sad"\cf2 , \cf5 "Joyful"\cf2 , \cf5 "Angry"\cf2 , \cf5 "Tired"\cf2 ], \cf4 answer\cf2 : \cf6 1\cf2  \}\
+        ];\
+\
+        \cf3 let\cf2  currentQuestionIndex = \cf6 0\cf2 ;\
+        \cf3 let\cf2  score = \cf6 0\cf2 ;\
+\
+        \cf3 function\cf2  loadQuestion() \{\
+            \cf3 const\cf2  questionContainer = document.getElementById(\cf5 "question"\cf2 );\
+            \cf3 const\cf2  optionsContainer = document.getElementById(\cf5 "options"\cf2 );\
+            \cf3 const\cf2  nextButton = document.getElementById(\cf5 "next-btn"\cf2 );\
+            questionContainer.textContent = quiz[currentQuestionIndex].question;\
+            optionsContainer.innerHTML = \cf5 ""\cf2 ;\
+            quiz[currentQuestionIndex].options.forEach(\cf8 (\cf4 option, index\cf8 ) =>\cf2  \{\
+                \cf3 const\cf2  button = document.createElement(\cf5 "button"\cf2 );\
+                button.textContent = option;\
+                button.classList.add(\cf5 "option"\cf2 );\
+                button.onclick = \cf8 () =>\cf2  checkAnswer(index, button);\
+                optionsContainer.appendChild(button);\
+            \});\
+            nextButton.classList.add(\cf5 "hidden"\cf2 );\
+        \}\
+\
+        \cf3 function\cf2  checkAnswer(\cf4 index, button\cf2 ) \{\
+            \cf3 const\cf2  correctIndex = quiz[currentQuestionIndex].answer;\
+            \cf3 if\cf2  (index === correctIndex) \{\
+                button.style.backgroundColor = \cf5 "lightgreen"\cf2 ;\
+                score++;\
+            \} \cf3 else\cf2  \{\
+                button.style.backgroundColor = \cf5 "lightcoral"\cf2 ;\
+            \}\
+            document.getElementById(\cf5 "next-btn"\cf2 ).classList.remove(\cf5 "hidden"\cf2 );\
+        \}\
+\
+        \cf3 function\cf2  nextQuestion() \{\
+            currentQuestionIndex++;\
+            \cf3 if\cf2  (currentQuestionIndex < quiz.length) \{\
+                loadQuestion();\
+            \} \cf3 else\cf2  \{\
+                document.getElementById(\cf5 "question-container"\cf2 ).classList.add(\cf5 "hidden"\cf2 );\
+                document.getElementById(\cf5 "next-btn"\cf2 ).classList.add(\cf5 "hidden"\cf2 );\
+                document.getElementById(\cf5 "score"\cf2 ).textContent = \cf5 `Final Score: \cf9 $\{score\}\cf5 /\cf9 $\{quiz.length\}\cf5 `\cf2 ;\
+                document.getElementById(\cf5 "score"\cf2 ).classList.remove(\cf5 "hidden"\cf2 );\
+            \}\
+        \}\
+\
+        loadQuestion();\
+    \cf3 </script>\cf2 \
+\cf3 </body>\cf2 \
+\cf3 </html>}
